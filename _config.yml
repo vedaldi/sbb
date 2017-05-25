@@ -1,7 +1,6 @@
 ---
 title: Seebibyte
 timezone: UTC
-port: 8080
 collections:
   posts:
     title: Posts
@@ -21,4 +20,5 @@ defaults:
     type: pages
   values:
     layout: page
+port: 8080
 permalink: pretty
