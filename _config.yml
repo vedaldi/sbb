@@ -1,6 +1,7 @@
 ---
 title: Seebibyte
 timezone: UTC
+port: 8080
 collections:
   posts:
     title: Posts
