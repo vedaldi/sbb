@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Seebibyte Home
 date: 2017-05-25 09:04:00 Z
 position: 3
