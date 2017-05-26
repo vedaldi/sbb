@@ -1,0 +1,21 @@
+{% assign face_image = person.id | prepend: 'images/people/' | append: '.jpg' %}
+{% capture has_face_image %}{% file_exists {{ face_image }} %}{% endcapture %}
+{% if has_face_image == "false" %}
+  {% assign face_image = 'images/people/lisa.jpg' %}
+{% endif %}
+{% assign content = post.note | strip_newlines %}
+
+<div class="col-xs-6 col-sm-4 col-md-3" style="height:17em;">
+  <img class="" style="height:10em;max-width:100%;" src="{{ face_image | prepend: site.baseurl}}" alt="Card image cap"/>
+  <h4>{{ person.name }}
+    <a href={% if person.homepage %}"{{ person.homepage }}"{% else %}
+       "https://www.google.co.uk/search?q={{ person.name | escape}}"
+    {% endif %}>
+      <span class="glyphicon glyphicon-new-window"/>
+    </a>
+  </h4>
+  <p>
+    {{ person.start : '%Y'}}&mdash;{% if person.end %}{{person.end : '%Y'}}{% else %}present{% endif %}
+  </p>
+  {% if content ~= "" %}<p class="small">{{ person.note }}</p>{% endif %}
+</div>

@@ -1,0 +1,71 @@
+---
+---
+
+@charset "utf-8";
+
+$spacing-unit:     30px;
+$font-size-base:   14px ;
+$font-size-h1:            floor(($font-size-base * 2.3)) ;
+$font-size-h2:            floor(($font-size-base * 1.8)) ;
+$font-size-h3:            ceil(($font-size-base * 1.5)) ;
+$font-size-h4:            ceil(($font-size-base * 1.2)) ;
+$font-size-h5:            $font-size-base;
+$font-size-h6:            ceil(($font-size-base * 0.85));
+
+@import "bootstrap-minimal";
+
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+
+// The bottom margin is for the sticky footer
+// http://stackoverflow.com/questions/21324395/bootstrap-3-flush-footer-to-bottom-not-fixed
+body {
+    margin-bottom: $spacing-unit * 3 ; // match footer
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $spacing-unit * 3 ; // match body bottom margin
+    color: $gray-light ;
+    background-color: $gray-lighter ;
+    font-size: $font-size-h5 ;
+    font-weight: $headings-font-weight;
+    padding-top: 1em;
+}
+.top-buffer {
+    margin-top: $padding-large-vertical ;
+}
+.bottom-buffer {
+    margin-bottom: $padding-large-vertical ;
+}
+.navbar {
+    margin-bottom: $padding-large-vertical ;
+}
+
+// Fix Google custom search
+input.gsc-search-button,
+input.gsc-search-button:hover,
+input.gsc-search-button:focus {
+  -webkit-box-shadow: none;
+  -moz-box-sizing: content-box;
+  box-shadow: none;
+}
+input.gsc-input,
+.gsc-input-box,
+.gsc-input-box-hover,
+.gsc-input-box-focus {
+  box-sizing: content-box;
+  line-height: normal;
+}
+.cse form.gsc-search-box,
+form.gsc-search-box  {
+    padding:0!important;
+}

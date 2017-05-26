@@ -1,0 +1,8 @@
+{% capture links %}{% assign sep = "" %}{%
+if paper.pdf %}{{sep}}<a href="{{site.baseurl}}/{{paper.pdf}}">PDF</a>{%
+assign sep = ", " %}{% endif %}{{
+sep}}<a href="{{site.baseurl}}{% link pub.html %}#{{paper.id}}">more</a>{% endcapture %}
+<li id="{{paper.id}}" class="pub" style="margin-bottom:0.5em;">
+  <strong>{{paper.title}}</strong>, {{paper.authors}}, <em>{{paper.venue}}</em>,
+  {{paper.year}} [{{links}}]
+</li>

@@ -4,6 +4,8 @@ PYTHON ?= /opt/local/bin/python2.7
 
 .PHONY: boot
 
+all: _site/index.html
+
 # Install Jekyll and SAAS
 boot:
 	bundler install
@@ -14,7 +16,7 @@ boot:
 	rsync -rav `bundler show bootstrap-sass`/assets/fonts/bootstrap fonts/
 	ln -svf `bundler show jquery-rails`/vendor/assets/javascripts/jquery.min.js javascripts/
 
-_site/index.html: $(deps) pub.html _data/pub.yaml
+_site/index.html: $(sources)
 	$(JEKYLL) build
 
 serve:
@@ -22,4 +24,3 @@ serve:
 
 build:
 	$(JEKYLL) build
-

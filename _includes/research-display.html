@@ -1,0 +1,8 @@
+{% capture url %}{{site.baseurl}}{{research_project.url}}{% endcapture %}
+{% capture more %}<p><a href='{{url}}'>More...</a></p>{% endcapture %}
+<div class="panel panel-default">
+<div class="panel-heading"><a href='{{url}}' class='clean'>{{research_project.title}}</a></div>
+<div class="panel-body">
+  {{ research_project.content | split:'<!-- More -->' | first | strip | append: more }}
+</div>
+</div>
