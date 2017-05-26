@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav">
         {% for p in site.sections %}
         {% if p.title and p.title != 'Home' %}
-        <li><a href="{{ p.url | prepend: site.baseurl }}"
+        <li><a href="{{ p.page | link }}"
                {% if p.url == page.url %}class="active"{% endif %}
             >{{ p.title }}</a></li>
         {% endif %}

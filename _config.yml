@@ -22,3 +22,19 @@ defaults:
     layout: page
 port: 8080
 permalink: pretty
+baseurl: /
+
+# Navigation settings
+sections:
+- title: Home
+  page: /index.html
+- title: Themes
+  page: /themes
+- title: Publications
+  page: /pub
+- title: Software & demos
+  page: /software
+
+# Build settings
+markdown: kramdown
+highlighter: rouge

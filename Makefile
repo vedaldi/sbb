@@ -4,7 +4,7 @@ sources=$(wildcard *.markdown)
 JEKYLL ?= bundler exec jekyll
 PYTHON ?= /opt/local/bin/python2.7
 
-.PHONY: boot
+.PHONY: boot, serve, build, distclean
 
 all: _site/index.html
 
@@ -26,3 +26,6 @@ serve:
 
 build:
 	$(JEKYLL) build
+
+distclean:
+	rm -rf _site
