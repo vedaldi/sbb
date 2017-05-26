@@ -11,10 +11,10 @@ boot:
 	bundler install
 	bundle exec rougify style base16.solarized > css/syntax.css
 	mkdir -p javascripts fonts _sass
-	ln -svf `bundler show bootstrap-sass`/assets/stylesheets/{_bootstrap.scss,bootstrap} _sass/
+	rsync -rav `bundler show bootstrap-sass`/assets/stylesheets/{_bootstrap.scss,bootstrap} _sass/
 	rsync -rav `bundler show bootstrap-sass`/assets/javascripts/{bootstrap.min.js,bootstrap} javascripts/
 	rsync -rav `bundler show bootstrap-sass`/assets/fonts/bootstrap fonts/
-	ln -svf `bundler show jquery-rails`/vendor/assets/javascripts/jquery.min.js javascripts/
+	rsync -rav `bundler show jquery-rails`/vendor/assets/javascripts/jquery.min.js javascripts/
 
 _site/index.html: $(sources)
 	$(JEKYLL) build
