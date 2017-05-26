@@ -1,4 +1,6 @@
 #
+sources=$(wildcard *.markdown)
+
 JEKYLL ?= bundler exec jekyll
 PYTHON ?= /opt/local/bin/python2.7
 
