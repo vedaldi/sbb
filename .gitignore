@@ -1,11 +1,5 @@
 _site
 assets/teach
-_sass/_bootstrap.scss
-_sass/bootstrap
-fonts/bootstrap
-javascripts/bootstrap
-javascripts/bootstrap.min.js
-javascripts/jquery.min.js
 Gemfile.lock
 .jekyll-metadata
 .sass-cache
